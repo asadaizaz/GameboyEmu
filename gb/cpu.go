@@ -1,4 +1,4 @@
-package cpu
+package gb
 
 import (
 	"github.com/asadaizaz/gameboyemu/bits"
