@@ -70,11 +70,13 @@ Flags:
 */
 func (cpu *CPU) Init() {
 	cpu.PC = 0x100 //Might need to change to 0x0?
-	cpu.AF.Set(0x0000)
-	cpu.BC.Set(0x0000)
-	cpu.DE.Set(0x0000)
-	cpu.HL.Set(0x0000)
-	cpu.SP.Set(0x0000)
+	//Powerup sequence
+	cpu.AF.Set(0x01B0)
+
+	cpu.BC.Set(0x0000) // OR 0013
+	cpu.DE.Set(0xFF56) // OR 00D8
+	cpu.HL.Set(0x000D) // OR 014D
+	cpu.SP.Set(0xFFFE)
 
 	cpu.AF.mask = 0xFFF0
 }
